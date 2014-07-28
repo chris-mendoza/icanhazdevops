@@ -37,8 +37,8 @@ Upload it to your chef server(Considering you have your knife.rb set up):
 
 <pre>
 <code>
-# cd icanhazdevops 
-# berks upload
+cd icanhazdevops 
+berks upload
 </code>
 </pre>
 <br>
@@ -53,7 +53,7 @@ knife role create icanhazdevops
 This next command will open a text editor. If you have not set one to default, do so with the command:
 <br>
 <code>
-# export EDITOR='vim'
+export EDITOR='vim'
 </code>
 <br>
 <br>
@@ -63,7 +63,7 @@ Make sure you save your changes to an external editor before commiting them. If 
 Edit icanhazdevops, and add the cookbook to the run list:
 <br>
 <code>
-# knife role edit icanhazdevops
+knife role edit icanhazdevops
 </code>
 <br>
 <br>
@@ -86,7 +86,7 @@ Example Role:
 Use this command to create servers with the web server role: 
 <pre>
 <code>
-<p> # knife rackspace server create -I 255df5fb-e3d4-45a3-9a07-c976debf7c14 -f 2 -r 'role[icanhazdevops]'
+knife rackspace server create -I 255df5fb-e3d4-45a3-9a07-c976debf7c14 -f 2 -r 'role[icanhazdevops]'
 </code>
 </pre>
 This command creates servers with a unique host name, so you may use it to create more than one web server.
