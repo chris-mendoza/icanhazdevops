@@ -2,7 +2,7 @@ icanhazdevops
 =============
 Chris Mendoza
 
-Deploy Apache Node
+Deploy Apache Node with custom index.html
 
 The following gems are required on your workstation to use this cookbook:
 chef
@@ -39,9 +39,33 @@ Create a role in Chef:
 
 knife role create icanhazdevops
 
-Edit icanhazdevops, and add the cookbook to the run list.
+This next command will open a text editor. If you have not set one to default, 
+do so with the command: export EDITOR='vim'
+
+Make sure you save your changes to an external editor before commiting them.
+If your changes are wrong, they will be deleted by chef :(
+
+Edit icanhazdevops, and add the cookbook to the run list:
 
 knife role edit icanhazdevops
+
+Example Role:
+<code>
+ {
+  "name": "icanhazdevops",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[icanhazdevops]"
+  ],
+  "env_run_lists": {
+  }
+</code>
 
 Use this command to create servers with the web server role:
 knife rackspace server create -I 255df5fb-e3d4-45a3-9a07-c976debf7c14 -f 2 -r 'role[icanhazdevops]'
